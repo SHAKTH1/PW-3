@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="../css/firstpage.css"
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+   <body>
+      <title>E~VISUAL</title>
+   
+    
+      <div class="content">
+         <div class="text">
+         WELCOME
+         </div>
+         <form action="#">
+            <div class="container">
+
+                <h3>PLEASE SCAN YOUR RFID TAG</h3>
+                <iframe src="../html/audiofile/rfid.mp3" allow="autoplay" id="audio" hidden ></iframe>
+                <audio id="player" autoplay controls>
+                    <source src="audiofile/rfid.mp3" type="audio/mp3">
+                    </audio>
+            </div>
+          
+      </div>
+
+        
+        <script>
+            
+        var socket = io();
+
+        socket.on('data', function(data) {
+            
+            console.log(data);
+            
+            document.getElementById('sample').style.opacity = data+"%"; 
+
+        });
+        
+        </script>
+        
+    </body>
+</html>
